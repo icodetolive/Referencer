@@ -1,3 +1,3 @@
 # referencer
 
-This repository acts as a cheatsheet/go-to-guide for various installations, setups, migrations, etc.
+This repository is a curation of cheatsheets/go-to-guides for various setups, overviews, migrations, etc of technical concepts.
