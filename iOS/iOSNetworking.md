@@ -11,9 +11,9 @@ This course is divided into various sections.
 * NSURL => An object that contains a URL.
 * NSURLSession => Creates a session (private or shared) object that coordinates a group of data transfer related tasks. Network requests are referred as tasks by this class. So, any task used by NSURLSession is a subclass of NSURLSessionTask
 * NSURLSessionTask => handles following tasks:
-	a) NSURLSessionDataTask => returns data from network directly into memory as NSObjects
-	b) NSURLSessionDownloadTask => returns data from network into a temporary file to work with
-	c) NSURLSessionUploadTask => Uploads content
+	1. NSURLSessionDataTask => returns data from network directly into memory as NSObjects
+	2. NSURLSessionDownloadTask => returns data from network into a temporary file to work with
+	3. NSURLSessionUploadTask => Uploads content
 
 	To fetch data from network, following are the steps::
 	  1. Create a NSURL object 
