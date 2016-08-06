@@ -27,12 +27,13 @@ This course is divided into various sections.
 *****************SECTION 2: Using web services and APIs******************
 
 In order to build the URL from method parameters:
-	* Build a Constants dictionary where entire URL is broken into various parts with its relevant values:
-		- APIScheme(protocol), 
-		- APIHost(e.g: www.flickr.com),
-		- APIpath(e.g: services/rest),
-		- The query parameters with a combination of key=value 
-	* Create a NSQueryItem[] to append the query items from the entire query string
-	* Use NSURLComponents to build entire url and parse it and return as NSURL object
-	* NSURLRequest — represents a configurable URL that can specify properties such as the HTTP method type. Built on top of it is NSMutableURLRequest to modify the http method for the request specified. Use this class to create a request object and pass it as a parameter in the method dataTaskWithRequest(instead of dataTaskWithURL). 
+
+* Build a Constants dictionary where entire URL is broken into various parts with its relevant values:
+		a. APIScheme(protocol), 
+		b. APIHost(e.g: www.flickr.com),
+		c. APIpath(e.g: services/rest),
+		d. The query parameters with a combination of key=value 
+* Create a NSQueryItem[] to append the query items from the entire query string
+* Use NSURLComponents to build entire url and parse it and return as NSURL object
+* NSURLRequest — represents a configurable URL that can specify properties such as the HTTP method type. Built on top of it is NSMutableURLRequest to modify the http method for the request specified. Use this class to create a request object and pass it as a parameter in the method dataTaskWithRequest(instead of dataTaskWithURL). 
 	
