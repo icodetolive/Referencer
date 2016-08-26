@@ -15,25 +15,50 @@ This course is divided into various sections.
 	2. NSURLSessionDownloadTask => returns data from network into a temporary file to work with
 	3. NSURLSessionUploadTask => Uploads content
 
-	To fetch data from network, following are the steps::
-	  1. Create a NSURL object 
-	  2. Create a NSURLSession object (shared or private) and call its relevant method (with a completion handler) to perform the network request. e.g: dataTaskWithURL 
-	  3. In the method's closure, we write the block where we grab the NSData object by checking the NSError status(if nil, data is available). 
-	  4. But in order to start this network request, we need to resume the task. 
-	  5. To update the UI inside the completion handler of a network task, do not forget to use performUIUpdatesOnMain()
-	  6. In order to enable the HTTP requests, edit the settings in the info.plist. Add a string 'App Transport Security Settings' and Set the boolean value to YES for the key 'Allow Arbitrary Loads'.
+* To fetch data from network, following are the steps::
+	1. Create a NSURL object 
+	2. Create a NSURLSession object (shared or private) and call its relevant method (with a completion handler) to perform the network request. e.g: dataTaskWithURL 
+	3. In the method's closure, we write the block where we grab the NSData object by checking the NSError status(if nil, data is available). 
+    4. But in order to start this network request, we need to resume the task. 
+	5. To update the UI inside the completion handler of a network task, do not forget to use performUIUpdatesOnMain()
+	6. In order to enable the HTTP requests, edit the settings in the info.plist. Add a string 'App Transport Security Settings' and Set the boolean value to YES for the key 'Allow Arbitrary Loads'.
 
 
 *****************SECTION 2: Using web services and APIs******************
 
-In order to build the URL from method parameters:
+To build the URL from method parameters, make a request and get the response:
 
-* Build a Constants dictionary where entire URL is broken into various parts with its relevant values:
-		a. APIScheme(protocol), 
-		b. APIHost(e.g: www.flickr.com),
-		c. APIpath(e.g: services/rest),
-		d. The query parameters with a combination of key=value 
-* Create a NSQueryItem[] to append the query items from the entire query string
-* Use NSURLComponents to build entire url and parse it and return as NSURL object
-* NSURLRequest — represents a configurable URL that can specify properties such as the HTTP method type. Built on top of it is NSMutableURLRequest to modify the http method for the request specified. Use this class to create a request object and pass it as a parameter in the method dataTaskWithRequest(instead of dataTaskWithURL). 
+This above process consists of 3 phases majorly:
+
+1. Building a URL from scratch 
+2. Making a request
+3. Getting the response
+
+---------------------------------------------------
+Build a Constants dictionary where entire URL is broken into various parts:
+		1.1. Parameter Keys 
+		1.2. Parameter Values
+		1.3. Response Keys
+		1.4. Response Values
+
+1. The type of this dictionary is: [String: AnyObject]
+2. Pass this dictionary as a method parameter to the function that converts the characters into ASCII safe 
+3. The string value can be made ASCII safe using the method: 'stringByAddingPercentEncodingWithAllowedCharacters'
+
+---------------------------------------------------
+Making a request:
+1. Create a NSURLRequest object with NSURL string. With this request object, we can call the API with any of the HTTP methods like: GET, POST, PUT, DELETE, etc.
+	1.1. NSMutableURLRequest helps to modify the http method for specified request.
+2. Create a NSURLSession object (shared or private) and call its relevant method (with a completion handler) to perform the network request. e.g: dataTaskWithRequest
+
+---------------------------------------------------
+Get the response:
+1. Get the result/data in its raw JSON format. 
+2. Parse this data into a Foundational object such as NSDictionary or NSArray
+2. Grab the data from this foundational object.
+
+
+
+
+
 	
