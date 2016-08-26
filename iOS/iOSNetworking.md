@@ -36,10 +36,10 @@ This above process consists of 3 phases majorly:
 
 ---------------------------------------------------
 Build a Constants dictionary where entire URL is broken into various parts:
-		1.1. Parameter Keys 
-		1.2. Parameter Values
-		1.3. Response Keys
-		1.4. Response Values
+	1. Parameter Keys 
+	2. Parameter Values
+	3. Response Keys
+	4. Response Values
 
 1. The type of this dictionary is: [String: AnyObject]
 2. Pass this dictionary as a method parameter to the function that converts the characters into ASCII safe 
@@ -48,14 +48,14 @@ Build a Constants dictionary where entire URL is broken into various parts:
 ---------------------------------------------------
 Making a request:
 1. Create a NSURLRequest object with NSURL string. With this request object, we can call the API with any of the HTTP methods like: GET, POST, PUT, DELETE, etc.
-	1.1. NSMutableURLRequest helps to modify the http method for specified request.
+	* NSMutableURLRequest helps to modify the http method for specified request.
 2. Create a NSURLSession object (shared or private) and call its relevant method (with a completion handler) to perform the network request. e.g: dataTaskWithRequest
 
 ---------------------------------------------------
 Get the response:
 1. Get the result/data in its raw JSON format. 
 2. Parse this data into a Foundational object such as NSDictionary or NSArray
-2. Grab the data from this foundational object.
+3. Grab the data from this foundational object.
 
 
 
